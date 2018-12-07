@@ -1,0 +1,14 @@
+﻿<Properties StartupConfiguration="{ACB87B98-3158-4476-B797-CF77EBD92103}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="OMS Status">
+    <Files>
+      <File FileName="OMS Status" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.OMS PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

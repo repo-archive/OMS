@@ -1,0 +1,6 @@
+/Users/steventang/Projects/OMS/OMS/bin/Debug/OMS.exe
+/Users/steventang/Projects/OMS/OMS/bin/Debug/OMS.pdb
+/Users/steventang/Projects/OMS/OMS/obj/x86/Debug/OMS.csprojAssemblyReference.cache
+/Users/steventang/Projects/OMS/OMS/obj/x86/Debug/OMS.csproj.CoreCompileInputs.cache
+/Users/steventang/Projects/OMS/OMS/obj/x86/Debug/OMS.exe
+/Users/steventang/Projects/OMS/OMS/obj/x86/Debug/OMS.pdb
