@@ -1,0 +1,99 @@
+﻿
+
+Event
+
+
+
+
+
+
+Domain
+
+Aggregate/Entity
+
+-   Instruction
+    -   Id
+    -   Description
+    -   EventTimestamp
+    -   Action
+        -   New
+        -   Amend
+        -   Delete
+    -   CustomerId
+    -   IsAcive
+    -   OrderId[]
+    
+-   Order
+    -   Id
+    -   Instrument
+    -   Qty
+    -   Validity
+        -   Limit
+        -   Market
+    -   Price
+    -   Action
+        -   New
+        -   Delete
+    -   InstructionId
+    -   BuySell
+    -   OrderStatus[]
+    
+-   Customer
+    -   Id
+    -   Name
+    -   AccountId
+    -   Account[]
+    
+-   Account
+    -   Id
+    -   Balance
+    -   CustomerId
+    
+-   OrderStatus
+    -   IsActive
+    -   Left
+    -   Traded
+    -   OrderId
+
+Value
+-   Balance
+    - Currency
+    - Amount
+    
+-   Instrument
+    -   Symbol
+    -   Classification
+ 
+-   BuySell
+    -   Buy
+    -   Sell
+    
+-   Event
+-   CustomerAdded
+-   CustomerActivated
+-   CustomerDeactivated
+-   InstructionAdded
+-   InstructionAmended
+-   InstructionDeleted
+-   OrderAdded
+-   OrderDeleted
+-   OrderStatusUpdated
+-   BalanceCredited
+-   BalanceDebited
+
+
+Command
+- AddCustomerCmd
+- ActivateCustomerCmd
+- DeactivateCustomerCmd
+- UpdateBalanceCmd
+- AddInstructionCmd
+- DeleteInstructionCmd
+- AmendInstructionCMd
+- AddOderCmd
+- DeleteOrderCmd
+- UpdateOrderStatusCmd
+
+       
+
+

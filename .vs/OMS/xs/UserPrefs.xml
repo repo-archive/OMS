@@ -1,7 +1,13 @@
 ﻿<Properties StartupConfiguration="{ACB87B98-3158-4476-B797-CF77EBD92103}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="OMS Status">
+  <MonoDevelop.Ide.Workbench ActiveDocument=".gitignore">
     <Files>
-      <File FileName="OMS Status" />
+      <File FileName="Domain/Common/IAggregate.cs" Line="1" Column="1" />
+      <File FileName="Domain/Common/ValueObjectBase.cs" Line="1" Column="1" />
+      <File FileName="Domain/Common/IDomainEvent.cs" Line="6" Column="17" />
+      <File FileName="Domain/Common/CommandBase.cs" Line="1" Column="1" />
+      <File FileName="Domain/Account/Account.cs" Line="44" Column="21" />
+      <File FileName="../IDDD_Samples_NET/iddd_collaboration/Domain.Model/Forums/Discussion.cs" Line="12" Column="47" />
+      <File FileName=".gitignore" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.OMS PreferredExecutionTarget="MonoDevelop.Default" />
