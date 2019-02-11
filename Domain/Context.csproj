@@ -28,17 +28,35 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="NLog">
+      <HintPath>..\packages\NLog.4.5.11\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MyClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Common\EntityBase.cs" />
-    <Compile Include="Common\IAggregate.cs" />
-    <Compile Include="Common\ValueObjectBase.cs" />
+    <Compile Include="Common\Identity.cs" />
+    <Compile Include="Common\ValueObject.cs" />
     <Compile Include="Common\IDomainEvent.cs" />
     <Compile Include="Common\CommandBase.cs" />
-    <Compile Include="Account\Account.cs" />
     <Compile Include="Common\ICommandHandler.cs" />
+    <Compile Include="Account\Domain\Account.cs" />
+    <Compile Include="Account\Value\FundReservation.cs" />
+    <Compile Include="Common\HashCodeHelper.cs" />
+    <Compile Include="Common\DomainEventPublisher.cs" />
+    <Compile Include="Common\IDomainEventSubscriber.cs" />
+    <Compile Include="Account\Command\Reply\FundReservationReply.cs" />
+    <Compile Include="Account\Command\Reply\ReplyBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Instruction\" />
@@ -66,6 +84,13 @@
     <Folder Include="Order\Command\" />
     <Folder Include="Order\Event\" />
     <Folder Include="Common\" />
+    <Folder Include="Account\API\" />
+    <Folder Include="Account\Domain\" />
+    <Folder Include="Account\Value\" />
+    <Folder Include="Account\Command\Reply\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

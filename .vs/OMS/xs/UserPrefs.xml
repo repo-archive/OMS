@@ -1,18 +1,25 @@
 ﻿<Properties StartupConfiguration="{ACB87B98-3158-4476-B797-CF77EBD92103}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument=".gitignore">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../cqrs-journey/source/Conference/Conference/Order.cs">
     <Files>
-      <File FileName="Domain/Common/IAggregate.cs" Line="1" Column="1" />
-      <File FileName="Domain/Common/ValueObjectBase.cs" Line="1" Column="1" />
-      <File FileName="Domain/Common/IDomainEvent.cs" Line="6" Column="17" />
-      <File FileName="Domain/Common/CommandBase.cs" Line="1" Column="1" />
-      <File FileName="Domain/Account/Account.cs" Line="44" Column="21" />
-      <File FileName="../IDDD_Samples_NET/iddd_collaboration/Domain.Model/Forums/Discussion.cs" Line="12" Column="47" />
-      <File FileName=".gitignore" Line="1" Column="1" />
+      <File FileName="Domain/Account/Domain/Account.cs" Line="10" Column="9" />
+      <File FileName="../cqrs-journey/source/Conference/Payments/ThirdPartyProcessorPayment.cs" Line="42" Column="46" />
+      <File FileName="Domain/Account/Value/FundReservation.cs" Line="4" Column="1" />
+      <File FileName="Domain/Account/Command/Reply/FundReservationReply.cs" Line="12" Column="9" />
+      <File FileName="Domain/Account/Command/Reply/ReplyBase.cs" Line="5" Column="9" />
+      <File FileName="Domain/Common/Identity.cs" Line="47" Column="10" />
+      <File FileName="../IDDD_Samples_NET/iddd_collaboration/Domain.Model/Forums/Discussion.cs" Line="90" Column="16" />
+      <File FileName="../IDDD_Samples_NET/iddd_common/Domain.Model/EventSourcedRootEntity.cs" Line="15" Column="16" />
+      <File FileName="../IDDD_Samples_NET/iddd_collaboration/Domain.Model/Forums/Post.cs" Line="14" Column="18" />
+      <File FileName="../eShopOnContainers/src/Services/Ordering/Ordering.Domain/SeedWork/IAggregateRoot.cs" Line="4" Column="30" />
+      <File FileName="../eShopOnContainers/src/Services/Ordering/Ordering.Domain/AggregatesModel/BuyerAggregate/Buyer.cs" Line="10" Column="17" />
+      <File FileName="../eShopOnContainers/src/Services/Ordering/Ordering.Domain/SeedWork/IRepository.cs" Line="5" Column="26" />
+      <File FileName="../eShopOnContainers/src/Services/Ordering/Ordering.Infrastructure/Repositories/BuyerRepository.cs" Line="16" Column="13" />
+      <File FileName="../cqrs-journey/source/Conference/Conference/Order.cs" Line="38" Column="10" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.OMS PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
