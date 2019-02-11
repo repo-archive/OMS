@@ -41,6 +41,5 @@ namespace Domain.Account
             return requestAmount <= (Fund + m_min);
         }
 
-        public void 
     }
 }
