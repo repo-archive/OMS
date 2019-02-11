@@ -20,7 +20,7 @@ namespace Domain.Common
     public class DomainEventPublisher
     {
         private bool m_publishing;
-        List<IDomainEventSubscriber<IDomainEvent>> m_subscribers;
+        private List<IDomainEventSubscriber<IDomainEvent>> m_subscribers;
 
         public DomainEventPublisher()
         {

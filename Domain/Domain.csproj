@@ -33,8 +33,12 @@
   <ItemGroup>
     <Compile Include="Common\DomianEventPublisher.cs" />
     <Compile Include="Common\EventSourcedRootEntity.cs" />
+    <Compile Include="Common\IEventStore.cs" />
+    <Compile Include="Common\EventStream.cs" />
     <Compile Include="Common\IDomainEvent.cs" />
     <Compile Include="Common\IDomainEventSubscriber.cs" />
+    <Compile Include="Common\OptimisticConcurrencyException.cs" />
+    <Compile Include="Common\RealConcurrencyException.cs" />
     <Compile Include="MyClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Common\EntityBase.cs" />
