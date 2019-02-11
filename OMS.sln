@@ -2,8 +2,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OMS", "OMS\OMS.csproj", "{ACB87B98-3158-4476-B797-CF77EBD92103}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Context", "Domain\Context.csproj", "{411EA7D0-B452-4DD1-8616-0F42AEFD4A6D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{E572D303-A21F-4B9C-BB79-6F1FA5B6066A}"
@@ -20,16 +18,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game", "Game\Game.csproj", "{EA45D22F-611C-4680-BCE2-D8696A8CF27C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{ACB87B98-3158-4476-B797-CF77EBD92103}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{ACB87B98-3158-4476-B797-CF77EBD92103}.Debug|x86.Build.0 = Debug|Any CPU
-		{ACB87B98-3158-4476-B797-CF77EBD92103}.Release|x86.ActiveCfg = Release|Any CPU
-		{ACB87B98-3158-4476-B797-CF77EBD92103}.Release|x86.Build.0 = Release|Any CPU
 		{411EA7D0-B452-4DD1-8616-0F42AEFD4A6D}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{411EA7D0-B452-4DD1-8616-0F42AEFD4A6D}.Debug|x86.Build.0 = Debug|Any CPU
 		{411EA7D0-B452-4DD1-8616-0F42AEFD4A6D}.Release|x86.ActiveCfg = Release|Any CPU
@@ -42,6 +38,10 @@ Global
 		{90A5A7B1-46BE-4591-9D40-E9FFC339B780}.Debug|x86.Build.0 = Debug|Any CPU
 		{90A5A7B1-46BE-4591-9D40-E9FFC339B780}.Release|x86.ActiveCfg = Release|Any CPU
 		{90A5A7B1-46BE-4591-9D40-E9FFC339B780}.Release|x86.Build.0 = Release|Any CPU
+		{EA45D22F-611C-4680-BCE2-D8696A8CF27C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EA45D22F-611C-4680-BCE2-D8696A8CF27C}.Debug|x86.Build.0 = Debug|Any CPU
+		{EA45D22F-611C-4680-BCE2-D8696A8CF27C}.Release|x86.ActiveCfg = Release|Any CPU
+		{EA45D22F-611C-4680-BCE2-D8696A8CF27C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

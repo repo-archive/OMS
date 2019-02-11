@@ -1,11 +1,11 @@
-﻿<Properties StartupConfiguration="{ACB87B98-3158-4476-B797-CF77EBD92103}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="../cqrs-journey/source/Conference/Conference/Order.cs">
+﻿<Properties StartupConfiguration="{EA45D22F-611C-4680-BCE2-D8696A8CF27C}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Game/Program.cs">
     <Files>
-      <File FileName="Domain/Account/Domain/Account.cs" Line="10" Column="9" />
+      <File FileName="Domain/Account/Domain/Account.cs" Line="10" Column="1" />
       <File FileName="../cqrs-journey/source/Conference/Payments/ThirdPartyProcessorPayment.cs" Line="42" Column="46" />
       <File FileName="Domain/Account/Value/FundReservation.cs" Line="4" Column="1" />
-      <File FileName="Domain/Account/Command/Reply/FundReservationReply.cs" Line="12" Column="9" />
-      <File FileName="Domain/Account/Command/Reply/ReplyBase.cs" Line="5" Column="9" />
+      <File FileName="Domain/Account/Command/Reply/FundReservationReply.cs" Line="12" Column="1" />
+      <File FileName="Domain/Account/Command/Reply/ReplyBase.cs" Line="5" Column="1" />
       <File FileName="Domain/Common/Identity.cs" Line="47" Column="10" />
       <File FileName="../IDDD_Samples_NET/iddd_collaboration/Domain.Model/Forums/Discussion.cs" Line="90" Column="16" />
       <File FileName="../IDDD_Samples_NET/iddd_common/Domain.Model/EventSourcedRootEntity.cs" Line="15" Column="16" />
@@ -14,12 +14,16 @@
       <File FileName="../eShopOnContainers/src/Services/Ordering/Ordering.Domain/AggregatesModel/BuyerAggregate/Buyer.cs" Line="10" Column="17" />
       <File FileName="../eShopOnContainers/src/Services/Ordering/Ordering.Domain/SeedWork/IRepository.cs" Line="5" Column="26" />
       <File FileName="../eShopOnContainers/src/Services/Ordering/Ordering.Infrastructure/Repositories/BuyerRepository.cs" Line="16" Column="13" />
-      <File FileName="../cqrs-journey/source/Conference/Conference/Order.cs" Line="38" Column="10" />
+      <File FileName="OMS/Program.cs" Line="1" Column="1" />
+      <File FileName="Game/Program.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.OMS PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.ItemProperties.Game FirstBuild="True" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <DisabledProjects>
+    <String>OMS/OMS.csproj</String>
+  </DisabledProjects>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
