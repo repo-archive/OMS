@@ -1,10 +1,8 @@
 ﻿using System;
 namespace Domain.Common
 {
-    public class IDomainEvent
+    public interface IDomainEvent
     {
-        public IDomainEvent()
-        {
-        }
+       DateTimeOffset OccuredOn { get; set; }
     }
 }

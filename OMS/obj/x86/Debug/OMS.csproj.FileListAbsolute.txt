@@ -4,3 +4,9 @@
 /Users/steventang/Projects/OMS/OMS/obj/x86/Debug/OMS.csproj.CoreCompileInputs.cache
 /Users/steventang/Projects/OMS/OMS/obj/x86/Debug/OMS.exe
 /Users/steventang/Projects/OMS/OMS/obj/x86/Debug/OMS.pdb
+D:\work\OMS\OMS\bin\Debug\OMS.exe
+D:\work\OMS\OMS\bin\Debug\OMS.pdb
+D:\work\OMS\OMS\obj\x86\Debug\OMS.csprojAssemblyReference.cache
+D:\work\OMS\OMS\obj\x86\Debug\OMS.csproj.CoreCompileInputs.cache
+D:\work\OMS\OMS\obj\x86\Debug\OMS.exe
+D:\work\OMS\OMS\obj\x86\Debug\OMS.pdb

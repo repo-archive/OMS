@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -27,30 +27,26 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\DomianEventPublisher.cs" />
+    <Compile Include="Common\EventSourcedRootEntity.cs" />
+    <Compile Include="Common\IDomainEvent.cs" />
+    <Compile Include="Common\IDomainEventSubscriber.cs" />
     <Compile Include="MyClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Common\EntityBase.cs" />
     <Compile Include="Common\IAggregate.cs" />
     <Compile Include="Common\ValueObjectBase.cs" />
-    <Compile Include="Common\IDomainEvent.cs" />
     <Compile Include="Common\CommandBase.cs" />
     <Compile Include="Account\Account.cs" />
     <Compile Include="Common\ICommandHandler.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Instruction\" />
-    <Folder Include="Order\" />
-    <Folder Include="Customer\" />
-    <Folder Include="Account\" />
-    <Folder Include="OrderStatus\" />
-    <Folder Include="Balance\" />
-    <Folder Include="Instrument\" />
-    <Folder Include="BuySell\" />
-    <Folder Include="Account\Event\" />
     <Folder Include="Account\Command\" />
+    <Folder Include="Account\Event\" />
     <Folder Include="Balance\Command\" />
     <Folder Include="Balance\Event\" />
     <Folder Include="BuySell\Command\" />
@@ -65,7 +61,6 @@
     <Folder Include="OrderStatus\Event\" />
     <Folder Include="Order\Command\" />
     <Folder Include="Order\Event\" />
-    <Folder Include="Common\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
