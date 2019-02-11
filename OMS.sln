@@ -1,6 +1,7 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OMS", "OMS\OMS.csproj", "{ACB87B98-3158-4476-B797-CF77EBD92103}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Context", "Domain\Context.csproj", "{411EA7D0-B452-4DD1-8616-0F42AEFD4A6D}"
@@ -25,10 +26,10 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{ACB87B98-3158-4476-B797-CF77EBD92103}.Debug|x86.ActiveCfg = Debug|x86
-		{ACB87B98-3158-4476-B797-CF77EBD92103}.Debug|x86.Build.0 = Debug|x86
-		{ACB87B98-3158-4476-B797-CF77EBD92103}.Release|x86.ActiveCfg = Release|x86
-		{ACB87B98-3158-4476-B797-CF77EBD92103}.Release|x86.Build.0 = Release|x86
+		{ACB87B98-3158-4476-B797-CF77EBD92103}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{ACB87B98-3158-4476-B797-CF77EBD92103}.Debug|x86.Build.0 = Debug|Any CPU
+		{ACB87B98-3158-4476-B797-CF77EBD92103}.Release|x86.ActiveCfg = Release|Any CPU
+		{ACB87B98-3158-4476-B797-CF77EBD92103}.Release|x86.Build.0 = Release|Any CPU
 		{411EA7D0-B452-4DD1-8616-0F42AEFD4A6D}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{411EA7D0-B452-4DD1-8616-0F42AEFD4A6D}.Debug|x86.Build.0 = Debug|Any CPU
 		{411EA7D0-B452-4DD1-8616-0F42AEFD4A6D}.Release|x86.ActiveCfg = Release|Any CPU
@@ -41,5 +42,11 @@ Global
 		{90A5A7B1-46BE-4591-9D40-E9FFC339B780}.Debug|x86.Build.0 = Debug|Any CPU
 		{90A5A7B1-46BE-4591-9D40-E9FFC339B780}.Release|x86.ActiveCfg = Release|Any CPU
 		{90A5A7B1-46BE-4591-9D40-E9FFC339B780}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CEDF2C52-2337-4BD0-9257-EB2CFA357809}
 	EndGlobalSection
 EndGlobal

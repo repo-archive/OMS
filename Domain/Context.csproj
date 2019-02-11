@@ -1,96 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{411EA7D0-B452-4DD1-8616-0F42AEFD4A6D}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>Domain</RootNamespace>
-    <AssemblyName>Domain</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <TargetFramework>net47</TargetFramework>
+    <AssemblyTitle>Domain</AssemblyTitle>
+    <Copyright>${AuthorCopyright}</Copyright>
+    <AssemblyVersion>1.0.*</AssemblyVersion>
+    <FileVersion>1.0.*</FileVersion>
+    <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
     <OutputPath>bin\Debug</OutputPath>
     <DefineConstants>DEBUG;</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="NLog">
-      <HintPath>..\packages\NLog.4.5.11\lib\net45\NLog.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.IO.Compression" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.ServiceModel" />
-    <Reference Include="System.Transactions" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="MyClass.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Common\EntityBase.cs" />
-    <Compile Include="Common\Identity.cs" />
-    <Compile Include="Common\ValueObject.cs" />
-    <Compile Include="Common\IDomainEvent.cs" />
-    <Compile Include="Common\CommandBase.cs" />
-    <Compile Include="Common\ICommandHandler.cs" />
-    <Compile Include="Account\Domain\Account.cs" />
-    <Compile Include="Account\Value\FundReservation.cs" />
-    <Compile Include="Common\HashCodeHelper.cs" />
-    <Compile Include="Common\DomainEventPublisher.cs" />
-    <Compile Include="Common\IDomainEventSubscriber.cs" />
-    <Compile Include="Account\Command\Reply\FundReservationReply.cs" />
-    <Compile Include="Account\Command\Reply\ReplyBase.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Instruction\" />
-    <Folder Include="Order\" />
-    <Folder Include="Customer\" />
-    <Folder Include="Account\" />
-    <Folder Include="OrderStatus\" />
-    <Folder Include="Balance\" />
-    <Folder Include="Instrument\" />
-    <Folder Include="BuySell\" />
-    <Folder Include="Account\Event\" />
-    <Folder Include="Account\Command\" />
-    <Folder Include="Balance\Command\" />
-    <Folder Include="Balance\Event\" />
-    <Folder Include="BuySell\Command\" />
-    <Folder Include="BuySell\Event\" />
-    <Folder Include="Customer\Command\" />
-    <Folder Include="Customer\Event\" />
-    <Folder Include="Instruction\Command\" />
-    <Folder Include="Instruction\Event\" />
-    <Folder Include="Instrument\Command\" />
-    <Folder Include="Instrument\Event\" />
-    <Folder Include="OrderStatus\Command\" />
-    <Folder Include="OrderStatus\Event\" />
-    <Folder Include="Order\Command\" />
-    <Folder Include="Order\Event\" />
-    <Folder Include="Common\" />
-    <Folder Include="Account\API\" />
-    <Folder Include="Account\Domain\" />
-    <Folder Include="Account\Value\" />
-    <Folder Include="Account\Command\Reply\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
