@@ -18,4 +18,11 @@
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NLog" Version="4.5.11" />
+    <PackageReference Include="NLog.Config" Version="4.5.11" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="NLog.Config" />
+  </ItemGroup>
 </Project>

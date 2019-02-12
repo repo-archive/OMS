@@ -5,4 +5,12 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Store\EventStore.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>
