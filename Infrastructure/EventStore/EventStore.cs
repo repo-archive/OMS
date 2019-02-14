@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using Domain.Common;
+using Infrastructure.Store;
 
 namespace Infrastructure.EventStore
 {
@@ -14,13 +15,14 @@ namespace Infrastructure.EventStore
     /// </summary>
     public class EventStore : IEventStore
     {
-        readonly BinaryFormatter _formatter = new BinaryFormatter();
+        readonly BinaryFormatter m_formatter = new BinaryFormatter();
+        readonly IAppendOnlyStore m_appendOnlyStore;
 
         byte[] SerializeEvent(IEvent[] e)
         {
             using (var mem = new MemoryStream())
             {
-                _formatter.Serialize(mem, e);
+                m_formatter.Serialize(mem, e);
                 return mem.ToArray();
             }
         }
@@ -29,20 +31,19 @@ namespace Infrastructure.EventStore
         {
             using (var mem = new MemoryStream(data))
             {
-                return (IEvent[])_formatter.Deserialize(mem);
+                return (IEvent[])m_formatter.Deserialize(mem);
             }
         }
 
         public EventStore(IAppendOnlyStore appendOnlyStore)
         {
-            _appendOnlyStore = appendOnlyStore;
+            m_appendOnlyStore = appendOnlyStore;
         }
 
-        readonly IAppendOnlyStore _appendOnlyStore;
         public EventStream LoadEventStream(IIdentity id, long skip, int take)
         {
             var name = IdentityToString(id);
-            var records = _appendOnlyStore.ReadRecords(name, skip, take).ToList();
+            var records = m_appendOnlyStore.ReadRecords(name, skip, take).ToList();
             var stream = new EventStream();
 
             foreach (var tapeRecord in records)
@@ -72,7 +73,7 @@ namespace Infrastructure.EventStore
             var data = SerializeEvent(events.ToArray());
             try
             {
-                _appendOnlyStore.Append(name, data, originalVersion);
+                m_appendOnlyStore.Append(name, data, originalVersion);
             }
             catch (AppendOnlyStoreConcurrencyException e)
             {

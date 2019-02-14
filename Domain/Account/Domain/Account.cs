@@ -15,7 +15,7 @@ namespace Domain.Account.Domain
         }
     }
 
-    public class Account : EntityBase, ICommandHandler
+    public class Account : Entity, ICommandHandler
     {
         private static readonly Logger Log = LogManager.GetCurrentClassLogger();
         readonly int m_customerId;
@@ -26,11 +26,13 @@ namespace Domain.Account.Domain
         public decimal PendingFund { get; private set; }
         public AccountId Id { get; private set; }
 
-        public Account(int customerId, decimal minBalance)
+        public Account Create(int customerId, decimal minBalance)
         {
             m_min = minBalance;
             Id = new AccountId(Guid.NewGuid().ToString());
             m_pendingTransactions = new List<FundReservation>();
+
+            return Id;
         }
 
         public void Add(decimal credit)
