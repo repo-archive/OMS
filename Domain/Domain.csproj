@@ -19,10 +19,13 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="NLog" Version="4.5.11" />
-    <PackageReference Include="NLog.Config" Version="4.5.11" />
+    <None Remove="NLog.Config" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="NLog.Config" />
+    <PackageReference Include="NLog" Version="4.5.11" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Player\Command\" />
+    <Folder Include="Player\Event\" />
   </ItemGroup>
 </Project>
