@@ -5,4 +5,7 @@
     <ExternalConsole>true</ExternalConsole>
     <ConsolePause>true</ConsolePause>
   </PropertyGroup>
+  <PropertyGroup>
+    <ShowAllFiles>true</ShowAllFiles>
+  </PropertyGroup>
 </Project>

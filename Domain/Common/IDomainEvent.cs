@@ -3,6 +3,6 @@ namespace Domain.Common
 {
     public interface IDomainEvent
     {
-       DateTimeOffset OccuredOn { get; set; }
+       DateTimeOffset OccuredOn { get; }
     }
 }

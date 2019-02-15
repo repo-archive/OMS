@@ -6,46 +6,56 @@ using Domain.Common;
 
 namespace Domain.Account.Domain
 {
-    public class AccountId : Identity
-
-    {
-        public AccountId(string id)
-        {
-            Id = id;
-        }
-    }
-
-    public class Account : Entity, ICommandHandler
+    public class Account : EventSourcedRootEntity, ICommandHandler
     {
         private static readonly Logger Log = LogManager.GetCurrentClassLogger();
         readonly int m_customerId;
-        readonly decimal m_min;
-        readonly IList<FundReservation> m_pendingTransactions;
+        //readonly IList<FundReservation> m_pendingTransactions;
+        readonly AccountState m_state;
 
         public decimal Fund { get; private set; }
         public decimal PendingFund { get; private set; }
         public AccountId Id { get; private set; }
 
-        public Account Create(int customerId, decimal minBalance)
+        public Account(IEnumerable<IDomainEvent> eventStream, int streamVersion)
+            : base(eventStream, streamVersion)
         {
-            m_min = minBalance;
-            Id = new AccountId(Guid.NewGuid().ToString());
-            m_pendingTransactions = new List<FundReservation>();
-
-            return Id;
+            // hydrate
+            m_state = new AccountState(eventStream);
         }
 
-        public void Add(decimal credit)
+        public void Create(AccountId id, decimal minBalance)
         {
-            PendingFund += credit;
+            if (m_state.Created)
+                throw new InvalidOperationException($"Account {id} already exists");
+
+            Apply(new AccountAdded(minBalance, new GBPCurrency()));
+            //m_pendingTransactions = new List<FundReservation>();
+        }
+
+        public bool CreditAccount(decimal credit)
+        {
+            if (m_state.Created)
+            {
+                Apply(new AccountCredited(m_state.Fund + credit));
+                return true;
+            }
+
+            return false;
         }
 
         public bool Withdraw(decimal debit)
         {
-            if (!IsDeficit(debit))
+            if (m_state.Created)
             {
-                Fund -= debit;
-                return true;
+                if (!IsDeficit(debit))
+                {
+                    Apply(new AccountDebited(m_state.Fund - debit));
+                    return true;
+                }
+
+                Apply(new AccountDebitFailed(debit));
+                return false;
             }
 
             return false;
@@ -53,20 +63,31 @@ namespace Domain.Account.Domain
 
         internal bool IsDeficit(decimal amountRequest)
         {
-            return amountRequest <= (Fund + m_min);
+            return amountRequest <= (m_state.Fund + m_state.MinBalance);
         }
 
-        public bool Reserve(decimal amountRequest)
+        public bool SwitchCurrency(Currency newCurrency)
         {
-            if (IsDeficit(amountRequest))
+            if (m_state.Created)
             {
-                return false;
+                Apply(new CurrencyChanged(newCurrency));
+                return true;
             }
 
-            PendingFund += amountRequest;
-
-            return true;
+            return false;
         }
+
+        //public bool Reserve(decimal amountRequest)
+        //{
+        //    if (IsDeficit(amountRequest))
+        //    {
+        //        return false;
+        //    }
+
+        //    PendingFund += amountRequest;
+
+        //    return true;
+        //}
 
         public void Authorise(FundReservation reservation)
         {
@@ -74,25 +95,30 @@ namespace Domain.Account.Domain
             // Fire off request to Fund Authorisation component to another microservice
         }
 
-        public void OnFundRequestGranted(FundReservationReply reply)
-        {
-            if (m_pendingTransactions.Remove(reply.FundReservation))
-            {
-                // update fund
-                Fund += reply.FundReservation.Amount;
-            }
-            else
-            {
-                Log.Error($"Unable to find Fund Reservation [Id={reply.FundReservation.AuthorisationId} Amount={reply.FundReservation.Amount}]");
-            }
-        }
+        //public void OnFundRequestGranted(FundReservationReply reply)
+        //{
+        //    if (m_pendingTransactions.Remove(reply.FundReservation))
+        //    {
+        //        // update fund
+        //        Fund += reply.FundReservation.Amount;
+        //    }
+        //    else
+        //    {
+        //        Log.Error($"Unable to find Fund Reservation [Id={reply.FundReservation.AuthorisationId} Amount={reply.FundReservation.Amount}]");
+        //    }
+        //}
 
-        public void OnFundRequestRevoke(FundReservationReply reply)
+        //public void OnFundRequestRevoke(FundReservationReply reply)
+        //{
+        //    if (m_pendingTransactions.Remove(reply.FundReservation))
+        //    {
+        //        Log.Error(reply.ErrorMsg);
+        //    }
+        //}
+
+        protected override IEnumerable<object> GetIdentityComponents()
         {
-            if (m_pendingTransactions.Remove(reply.FundReservation))
-            {
-                Log.Error(reply.ErrorMsg);
-            }
+            yield return Id;
         }
     }
 }
