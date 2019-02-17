@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using Domain.Account.Domain;
 using Domain.Common;
+using Domain.Player.Domain;
 
 namespace Sample.Domain
 {
-    public class Player
+    public class Player : EventSourcedRootEntity
     {
         /// <summary> List of uncommitted changes </summary>
         public readonly IList<IDomainEvent> Changes = new List<IDomainEvent>();
 
         readonly PlayerState _state;
 
-        public Player(IEnumerable<IEvent> events)
+        public Player(IEnumerable<IDomainEvent> events)
         {
             _state = new PlayerState(events);
         }
@@ -103,6 +104,11 @@ namespace Sample.Domain
                 Transaction = _state.MaxTransactionId + 1,
                 TimeUtc = time
             });
+        }
+
+        protected override IEnumerable<object> GetIdentityComponents()
+        {
+            throw new NotImplementedException();
         }
     }
 }

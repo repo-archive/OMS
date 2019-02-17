@@ -5,12 +5,14 @@ namespace Domain.Account.Domain
 {
     public class AccountAdded : IDomainEvent
     {
+        public AccountId Id { get; }
         public decimal NewBalance { get; }
         public Currency Currency { get; }
         public DateTimeOffset OccuredOn { get; }
 
-        public AccountAdded(decimal newBalance, Currency currency)
+        public AccountAdded(AccountId id, decimal newBalance, Currency currency)
         {
+            Id = id;
             NewBalance = newBalance;
             Currency = currency;
             OccuredOn = DateTimeOffset.UtcNow;

@@ -26,6 +26,7 @@ namespace Domain.Account.Domain
 
         public void When(AccountAdded e)
         {
+            Id = e.Id;
             MinBalance = e.NewBalance;
             Fund = e.NewBalance;
             Currency = e.Currency;

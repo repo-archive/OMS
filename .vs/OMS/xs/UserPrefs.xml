@@ -1,7 +1,6 @@
 ﻿<Properties StartupConfiguration="{EA45D22F-611C-4680-BCE2-D8696A8CF27C}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="../IDDD_Samples_NET/iddd_agilepm/Domain.Model/Products/Releases/ScheduledBacklogItem.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Domain/Common/EventSourcedRootEntity.cs">
     <Files>
-      <File FileName="Domain/Account/Domain/Account.cs" Line="18" Column="38" />
       <File FileName="../cqrs-journey/source/Conference/Payments/ThirdPartyProcessorPayment.cs" Line="42" Column="46" />
       <File FileName="Domain/Account/Value/FundReservation.cs" Line="4" Column="1" />
       <File FileName="Domain/Account/Command/Reply/FundReservationReply.cs" Line="12" Column="1" />
@@ -16,7 +15,6 @@
       <File FileName="../eShopOnContainers/src/Services/Ordering/Ordering.Infrastructure/Repositories/BuyerRepository.cs" Line="16" Column="13" />
       <File FileName="../cqrs-journey/source/Conference/Conference/Order.cs" Line="38" Column="10" />
       <File FileName="../IDDD_Samples_NET/iddd_common/Domain.Model/Entity.cs" Line="22" Column="33" />
-      <File FileName="Domain/Common/EntityBase.cs" Line="20" Column="37" />
       <File FileName="../IDDD_Samples_NET/iddd_agilepm/Domain.Model/Discussions/DiscussionAvailability.cs" Line="1" Column="1" />
       <File FileName="../IDDD_Samples_NET/iddd_agilepm/Domain.Model/Products/Sprints/Sprint.cs" Line="26" Column="30" />
       <File FileName="../IDDD_Samples_NET/iddd_agilepm/Domain.Model/Products/Sprints/CommittedBacklogItem.cs" Line="22" Column="41" />
@@ -26,7 +24,15 @@
       <File FileName="../IDDD_Samples_NET/iddd_agilepm/Domain.Model/Products/ProductDiscussion.cs" Line="1" Column="1" />
       <File FileName="../IDDD_Samples_NET/iddd_agilepm/Domain.Model/Products/ProductId.cs" Line="1" Column="1" />
       <File FileName="../IDDD_Samples_NET/iddd_agilepm/Domain.Model/Products/Releases/Release.cs" Line="1" Column="1" />
-      <File FileName="../IDDD_Samples_NET/iddd_agilepm/Domain.Model/Products/Releases/ScheduledBacklogItem.cs" Line="1" Column="1" />
+      <File FileName="../IDDD_Samples_NET/iddd_agilepm/Domain.Model/Products/Releases/ScheduledBacklogItem.cs" Line="34" Column="41" />
+      <File FileName="Domain/Player/Domain/Player.cs" Line="10" Column="41" />
+      <File FileName="Domain/Account/Domain/Account.cs" Line="32" Column="16" />
+      <File FileName="Domain/Player/Domain/PlayerId.cs" Line="10" Column="9" />
+      <File FileName="Domain/Player/Domain/PlayerState.cs" Line="11" Column="10" />
+      <File FileName="Domain/Player/Command/Commands.cs" Line="46" Column="49" />
+      <File FileName="Domain/Account/Domain/Currency.cs" Line="12" Column="10" />
+      <File FileName="Domain/Account/Domain/AccountState.cs" Line="45" Column="37" />
+      <File FileName="Domain/Common/EventSourcedRootEntity.cs" Line="5" Column="27" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Game FirstBuild="True" PreferredExecutionTarget="MonoDevelop.Default" />
@@ -34,7 +40,7 @@
   <DisabledProjects>
     <String>OMS/OMS.csproj</String>
   </DisabledProjects>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
