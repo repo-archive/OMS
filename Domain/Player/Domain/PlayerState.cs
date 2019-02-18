@@ -25,7 +25,7 @@ namespace Domain.Player.Domain
             ((dynamic)this).When((dynamic)e);
         }
 
-        public void When(PlayerAdded e)
+        public void When(PlayerCreated e)
         {
             Id = e.Id;
             Name = e.Name;

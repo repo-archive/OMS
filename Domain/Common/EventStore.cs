@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
+using Infrastructure.Store;
 
 namespace Domain.Common
 {
@@ -13,13 +14,14 @@ namespace Domain.Common
     /// </summary>
     public class EventStore : IEventStore
     {
-        readonly BinaryFormatter _formatter = new BinaryFormatter();
+        readonly BinaryFormatter m_formatter = new BinaryFormatter();
+        readonly IAppendOnlyStore m_appendOnlyStore;
 
         byte[] SerializeEvent(IEvent[] e)
         {
             using (var mem = new MemoryStream())
             {
-                _formatter.Serialize(mem, e);
+                m_formatter.Serialize(mem, e);
                 return mem.ToArray();
             }
         }
@@ -28,20 +30,19 @@ namespace Domain.Common
         {
             using (var mem = new MemoryStream(data))
             {
-                return (IEvent[])_formatter.Deserialize(mem);
+                return (IEvent[])m_formatter.Deserialize(mem);
             }
         }
 
         public EventStore(IAppendOnlyStore appendOnlyStore)
         {
-            _appendOnlyStore = appendOnlyStore;
+            m_appendOnlyStore = appendOnlyStore;
         }
 
-        readonly IAppendOnlyStore _appendOnlyStore;
         public EventStream LoadEventStream(IIdentity id, long skip, int take)
         {
             var name = IdentityToString(id);
-            var records = _appendOnlyStore.ReadRecords(name, skip, take).ToList();
+            var records = m_appendOnlyStore.ReadRecords(name, skip, take).ToList();
             var stream = new EventStream();
 
             foreach (var tapeRecord in records)
@@ -71,14 +72,18 @@ namespace Domain.Common
             var data = SerializeEvent(events.ToArray());
             try
             {
-                _appendOnlyStore.Append(name, data, originalVersion);
+                m_appendOnlyStore.Append(name, data, originalVersion);
             }
             catch (AppendOnlyStoreConcurrencyException e)
             {
                 // load server events
                 var server = LoadEventStream(id, 0, int.MaxValue);
                 // throw a real problem
-                throw OptimisticConcurrencyException.Create(server.Version, e.ExpectedStreamVersion, id, server.Events);
+                throw OptimisticConcurrencyException.Create(
+                    server.Version,
+                    e.ExpectedStreamVersion,
+                    id,
+                    server.Events);
             }
 
             // technically there should be a parallel process that queries new changes 

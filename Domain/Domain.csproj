@@ -3,8 +3,8 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <AssemblyTitle>Domain</AssemblyTitle>
     <Copyright>${AuthorCopyright}</Copyright>
-    <AssemblyVersion>1.0.*</AssemblyVersion>
-    <FileVersion>1.0.*</FileVersion>
+    <AssemblyVersion>1.0.0</AssemblyVersion>
+    <FileVersion>1.0.0</FileVersion>
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

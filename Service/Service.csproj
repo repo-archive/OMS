@@ -3,7 +3,7 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <AssemblyTitle>Service</AssemblyTitle>
     <Copyright>${AuthorCopyright}</Copyright>
-    <AssemblyVersion>1.0.*</AssemblyVersion>
+    <AssemblyVersion>1.0.0</AssemblyVersion>
     <FileVersion>1.0.*</FileVersion>
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>

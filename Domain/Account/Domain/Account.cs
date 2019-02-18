@@ -9,12 +9,11 @@ namespace Domain.Account.Domain
     public class Account : EventSourcedRootEntity, ICommandHandler
     {
         private static readonly Logger Log = LogManager.GetCurrentClassLogger();
-        readonly int m_customerId;
         //readonly IList<FundReservation> m_pendingTransactions;
         readonly AccountState m_state;
 
-        public decimal Fund { get; private set; }
-        public decimal PendingFund { get; private set; }
+        //public decimal Fund { get; private set; }
+        //public decimal PendingFund { get; private set; }
         public AccountId Id { get; private set; }
 
         public Account(IEnumerable<IDomainEvent> eventStream, int streamVersion)
@@ -28,8 +27,8 @@ namespace Domain.Account.Domain
         {
             if (m_state.Created)
                 throw new InvalidOperationException($"Account {id} already exists");
-
-            Apply(new AccountAdded(minBalance, new GBPCurrency()));
+            Id = id;
+            Apply(new AccountAdded(Id, minBalance, new GBPCurrency()));
             //m_pendingTransactions = new List<FundReservation>();
         }
 
@@ -66,7 +65,7 @@ namespace Domain.Account.Domain
             return amountRequest <= (m_state.Fund + m_state.MinBalance);
         }
 
-        public bool SwitchCurrency(Currency newCurrency)
+        public bool CurrencyChanged(Currency newCurrency)
         {
             if (m_state.Created)
             {
