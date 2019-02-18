@@ -91,3 +91,6 @@ StyleCopReport.xml
 *.exe
 *.pdb
 *.exe
+*.cache
+*.props
+*.targets
